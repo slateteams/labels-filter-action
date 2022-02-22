@@ -12,7 +12,7 @@ inputs:
   strip-prefix:
     description: '"true" or "false", default "false"'
     required: false
-    default: '"false"'
+    default: ''
 outputs:
   filtered-labels-json-str: # id of output
     description: 'Filtered labels as json string'
