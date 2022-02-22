@@ -1,0 +1,21 @@
+name: 'Label filter'
+description: 'Filter PR / Issue labels by specified prefix'
+inputs:
+  labels-json-str:  # id of input
+    description: 'PR / Issue label as json string'
+    required: true
+    default: '[]'
+  prefix:
+    description: 'Label prefix to filter labels on'
+    required: false
+    default: ''
+  strip-prefix:
+    description: '"true" or "false", default "false"'
+    required: false
+    default: '"false"'
+outputs:
+  filtered-labels-json-str: # id of output
+    description: 'Filtered labels as json string'
+runs:
+  using: 'node16'
+  main: 'index.js'
