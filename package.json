@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "package": "ncc build index.js -m --license licenses.txt",
     "test": "jest",
     "test-watch": "jest --watch"
   },
@@ -15,6 +16,7 @@
     "@actions/github": "^5.0.0"
   },
   "devDependencies": {
+    "@vercel/ncc": "^0.33.3",
     "jest": "^27.5.1"
   },
   "volta": {
