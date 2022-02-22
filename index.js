@@ -1,5 +1,4 @@
 const core = require("@actions/core");
-const github = require("@actions/github");
 
 const labelFilter = require("./src/filter");
 
@@ -11,10 +10,7 @@ try {
     const filteredLabelsJsonStr = labelFilter(labelsJsonStr, prefix, stripPrefix);
 
     core.setOutput("filtered-labels-json-str", filteredLabelsJsonStr);
-
-    // Get the JSON webhook payload for the event that triggered the workflow
-    const payload = JSON.stringify(github.context.payload, undefined, 2);
-    console.log(`The event payload: ${payload}`);
+    console.log('Filtered labels:', filteredLabelsJsonStr);
 } catch (error) {
     core.setFailed(error.message);
 }
