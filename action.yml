@@ -1,7 +1,7 @@
 name: 'Label filter'
 description: 'Filter PR / Issue labels by specified prefix'
 inputs:
-  labels-json-str:  # id of input
+  labels-json-str:
     description: 'PR / Issue label as json string'
     required: true
     default: '[]'
@@ -14,7 +14,7 @@ inputs:
     required: false
     default: ''
 outputs:
-  filtered-labels-json-str: # id of output
+  filtered-labels-json-str:
     description: 'Filtered labels as json string'
 runs:
   using: 'node16'
