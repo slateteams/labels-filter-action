@@ -10,7 +10,7 @@ try {
     const filteredLabelsJsonStr = labelFilter(labelsJsonStr, prefix, stripPrefix);
 
     core.setOutput("filtered-labels-json-str", filteredLabelsJsonStr);
-    console.log('Filtered labels:', filteredLabelsJsonStr);
+    console.log('Filtering result:', filteredLabelsJsonStr);
 } catch (error) {
     core.setFailed(error.message);
 }
