@@ -3,11 +3,13 @@
 This action allows to filter the PR / Issue labels JSON string to retain only a subset of labels. This comes in handy when using labels to define target environments for deployment.
 
 For instance, if the PR has the following labels:
+
 - `bug`
 - `env:dev1`
 - `env:prod`
 
 using the action like so:
+
 ```yaml
 - uses: slateteams/labels-filter-action@v1
   with:
@@ -17,7 +19,6 @@ using the action like so:
 ```
 
 would output `["dev1"]` as a result.
-
 
 # Usage
 
@@ -53,7 +54,6 @@ deploy:
   steps:
     - ...
 ```
-
 
 # License
 

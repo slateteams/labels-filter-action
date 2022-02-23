@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier . --check",
+    "prettier:fix": "npm run prettier -- --write",
     "package": "ncc build index.js -m --license licenses.txt",
     "test": "jest",
     "test-watch": "jest --watch"
@@ -16,7 +18,8 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.33.3",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1"
   },
   "volta": {
     "node": "16.14.0"
