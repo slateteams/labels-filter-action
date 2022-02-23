@@ -5,14 +5,15 @@ This action allows to filter the PR / Issue labels JSON string to retain only a 
 For instance, if the PR has the following labels:
 - `bug`
 - `env:dev1`
+- `env:prod`
 
 using the action like so:
 ```yaml
 - uses: slateteams/labels-filter-action@v1
   with:
     labels-json-str: ${{ toJSON(github.event.pull_request.labels.*.name) }}
-    prefix: 'env:'
-    strip-prefix: 'true'
+    prefix: 'env:dev'
+    strip-prefix: 'env:'
 ```
 
 would output `["dev1"]` as a result.
@@ -35,11 +36,11 @@ verify-envs:
 
         # Prefix that the label should contain to be retained
         # Default: ''
-        prefix: 'env:'
+        prefix: 'env:dev'
 
-        # Whether or not to strip the prefix. Set it to anything other than '' or 'false' to activate.
-        # Default: 'false'
-        strip-prefix: 'true'
+        # Prefix to strip from the retained labels
+        # Default: ''
+        strip-prefix: 'env:'
 
 deploy:
   runs-on: ubuntu-latest
